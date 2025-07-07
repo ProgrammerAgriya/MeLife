@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MeLife™</title>
+  <style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #56b0b0, #99ffff);
+  min-height: 100vh;
+  margin: 0;
+}
+
+
+    h1 {
+      margin-top: 30px;
+    }
+
+    #button-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #image-container {
+      margin-top: 20px;
+    }
+
+    .reveal-image {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <audio id="Recovery_Sound">
+    <source src="Audio/Recovery_Sound.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function showAlert(item) {
+      alert(item + " has been recovered");
+    }
+
+    function showImage(src) {
+      const container = document.getElementById("image-container");
+      container.innerHTML = '';
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Image";
+      img.className = "reveal-image";
+      container.appendChild(img);
+
+      setTimeout(() => {
+        container.innerHTML = '';
+      }, 3000);
+    }
+
+    var x = document.getElementById("Recovery_Sound");
+    function playAudio() {
+      x.play();
+    }
+  </script>
+
+  <h1>MeLife™</h1>
+
+  <div id="image-container"></div>
+
+  <div id="button-grid">
+    <button onclick="playAudio(); showImage('sprites/Characters/Baseball.webp')">Baseball</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/knife.webp')">Knife</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/nickel.webp')">Nickel</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/balloon.webp')">Balloon</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/pepper.webp')">Pepper</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/lightbulb.webp')">Lightbulb</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/salt.webp')">Salt</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/paintbrush.webp')">Paintbrush</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/bomb.webp')">Bomb</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/marshmallow.webp')">Marshmallow</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/apple.webp')">Apple</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/bow.webp')">Bow</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/pickel.webp')">Pickle</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/paper.webp')">Paper</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/taco.webp')">Taco</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/oj.webp')">OJ</button>
+  </div>
+
+</body>
+</html>
