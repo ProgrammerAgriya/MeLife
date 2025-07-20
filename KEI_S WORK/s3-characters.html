@@ -7,10 +7,13 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: url('sprites/backgrounds/afterlife.webp') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  margin: 0;
+  background-image: 
+    url('sprites/backgrounds/grey.png'),
+    url('sprites/backgrounds/afterlife.webp');
+  background-position: center 20px, center center; /* Move grey.png up */
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: 800px auto, cover;  
 }
 
 

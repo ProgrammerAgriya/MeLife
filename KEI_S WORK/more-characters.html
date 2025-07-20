@@ -7,10 +7,13 @@
 body {
   font-family: Arial, sans-serif;
   text-align: center;
-  background: url('sprites/backgrounds/afterlife.webp') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  margin: 0;
+  background-image: 
+    url('sprites/backgrounds/grey.png'),
+    url('sprites/backgrounds/afterlife.webp');
+  background-position: center 20px, center center; /* Move grey.png up */
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-size: 800px auto, cover;  
 }
 
 
@@ -81,17 +84,17 @@ body {
   <div id="image-container"></div>
 
   <div id="button-grid">
-    <button onclick="playAudio(); showImage('sprites/Characters/Baseball.webp')">Box</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/knife.webp')">Cheesy</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/nickel.webp')">Cherries</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/balloon.webp')">Fan</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/pepper.webp')">Microphone</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/lightbulb.webp')">Soap</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/salt.webp')">Suitcase</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/paintbrush.webp')">Test Tube</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/bomb.webp')">Tissues</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/marshmallow.webp')">Trophy</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/apple.webp')">Yin-Yang</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/box.webp')">Box</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/cheesy.webp')">Cheesy</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/cherries.webp')">Cherries</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/fan.webp')">Fan</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/mic.webp')">Microphone</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/soap.webp')">Soap</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/suitcase.webp')">Suitcase</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/test_tube.webp')">Test Tube</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/tissues.webp')">Tissues</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/trophy.webp')">Trophy</button>
+    <button onclick="playAudio(); showImage('sprites/Characters/yinyang.webp')">Yin-Yang</button>
   </div>
 
   <div style="margin-top: 30px;">
