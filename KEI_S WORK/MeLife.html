@@ -4,20 +4,17 @@
   <meta charset="UTF-8">
   <title>MeLife™</title>
   <style>
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-image: 
-    url('sprites/backgrounds/grey.png'),
-    url('sprites/backgrounds/afterlife.webp');
-  background-position: center 20px, center center; /* Move grey.png up */
-  background-repeat: no-repeat, no-repeat;
-  background-attachment: fixed, fixed;
-  background-size: 800px auto, cover;  
-}
-
-
-
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-image: 
+        url('sprites/backgrounds/grey.png'),
+        url('sprites/backgrounds/afterlife.webp');
+      background-position: center 20px, center center;
+      background-repeat: no-repeat, no-repeat;
+      background-attachment: fixed, fixed;
+      background-size: 800px auto, cover;
+    }
 
     h1 {
       margin-top: 30px;
@@ -35,6 +32,7 @@ body {
       padding: 10px 15px;
       font-size: 16px;
       cursor: pointer;
+      border-radius: 50%; /* Optional: for circular look */
     }
 
     #image-container {
@@ -42,7 +40,6 @@ body {
     }
 
     .reveal-image {
-      max-width: 200px;
       display: block;
       margin: 0 auto;
     }
@@ -55,18 +52,77 @@ body {
   </audio>
 
   <script>
-    function showAlert(item) {
-      alert(item + " has been recovered");
-    }
+    const characterImages = {
+      Baseball: 'Baseball.webp',
+      Knife: 'knife.webp',
+      Nickel: 'nickel.webp',
+      Balloon: 'balloon.webp',
+      Pepper: 'pepper.webp',
+      Lightbulb: 'lightbulb.webp',
+      Salt: 'salt.webp',
+      Paintbrush: 'paintbrush.webp',
+      Bomb: 'bomb.webp',
+      Marshmallow: 'marshmallow.webp',
+      Apple: 'apple.webp',
+      Bow: 'bow.webp',
+      Pickle: 'pickel.webp', // Note the spelling here
+      Paper: 'paper.webp',
+      Taco: 'taco.webp',
+      OJ: 'oj.webp'
+    };
 
-    function showImage(src) {
+    function showImage(character) {
       const container = document.getElementById("image-container");
       container.innerHTML = '';
 
+      const filename = characterImages[character];
+      if (!filename) {
+        console.error(`Image not found for: ${character}`);
+        return;
+      }
+
       const img = document.createElement("img");
-      img.src = src;
-      img.alt = "Image";
+      img.src = `sprites/Characters/${filename}`;
+      img.alt = character;
       img.className = "reveal-image";
+
+      // Custom sizes
+      if (character === "Baseball") {
+        img.style.width = "500px";
+      } else if (character === "Knife") {
+        img.style.width = "50px";
+      } else if (character === "Nickel") {
+        img.style.width = "50px";
+      } else if (character === "Balloon") {
+        img.style.width = "50px";
+      } else if (character === "Pepper") {
+        img.style.width = "50px";
+      } else if (character === "Lightbulb") {
+        img.style.width = "50px";
+      } else if (character === "Salt") {
+        img.style.width = "50px";
+      } else if (character === "Paintbrush") {
+        img.style.width = "50px";
+      } else if (character === "Bomb") {
+        img.style.width = "50px";
+      } else if (character === "Marshmallow") {
+        img.style.width = "50px";
+      } else if (character === "Apple") {
+        img.style.width = "50px";
+      } else if (character === "Bow") {
+        img.style.width = "50px";
+      } else if (character === "Pickle") {
+        img.style.width = "50px";
+      } else if (character === "Paper") {
+        img.style.width = "50px";
+      } else if (character === "Taco") {
+        img.style.width = "50px";
+      } else if (character === "OJ") {
+        img.style.width = "50px";
+      } else {
+        img.style.width = "200px";
+      }
+
       container.appendChild(img);
 
       setTimeout(() => {
@@ -74,7 +130,7 @@ body {
       }, 3000);
     }
 
-    var x = document.getElementById("Recovery_Sound");
+    const x = document.getElementById("Recovery_Sound");
     function playAudio() {
       x.play();
     }
@@ -85,29 +141,28 @@ body {
   <div id="image-container"></div>
 
   <div id="button-grid">
-    <button onclick="playAudio(); showImage('sprites/Characters/Baseball.webp')">Baseball</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/knife.webp')">Knife</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/nickel.webp')">Nickel</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/balloon.webp')">Balloon</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/pepper.webp')">Pepper</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/lightbulb.webp')">Lightbulb</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/salt.webp')">Salt</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/paintbrush.webp')">Paintbrush</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/bomb.webp')">Bomb</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/marshmallow.webp')">Marshmallow</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/apple.webp')">Apple</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/bow.webp')">Bow</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/pickel.webp')">Pickle</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/paper.webp')">Paper</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/taco.webp')">Taco</button>
-    <button onclick="playAudio(); showImage('sprites/Characters/oj.webp')">OJ</button>
+    <button onclick="playAudio(); showImage('Baseball')">Baseball</button>
+    <button onclick="playAudio(); showImage('Knife')">Knife</button>
+    <button onclick="playAudio(); showImage('Nickel')">Nickel</button>
+    <button onclick="playAudio(); showImage('Balloon')">Balloon</button>
+    <button onclick="playAudio(); showImage('Pepper')">Pepper</button>
+    <button onclick="playAudio(); showImage('Lightbulb')">Lightbulb</button>
+    <button onclick="playAudio(); showImage('Salt')">Salt</button>
+    <button onclick="playAudio(); showImage('Paintbrush')">Paintbrush</button>
+    <button onclick="playAudio(); showImage('Bomb')">Bomb</button>
+    <button onclick="playAudio(); showImage('Marshmallow')">Marshmallow</button>
+    <button onclick="playAudio(); showImage('Apple')">Apple</button>
+    <button onclick="playAudio(); showImage('Bow')">Bow</button>
+    <button onclick="playAudio(); showImage('Pickle')">Pickle</button>
+    <button onclick="playAudio(); showImage('Paper')">Paper</button>
+    <button onclick="playAudio(); showImage('Taco')">Taco</button>
+    <button onclick="playAudio(); showImage('OJ')">OJ</button>
   </div>
 
   <div style="margin-top: 30px;">
-  <button onclick="location.href='credits.html'">View Credits</button>
-  <button onclick="location.href='more-characters.html'">Next</button>
-</div>
-
+    <button onclick="location.href='credits.html'">View Credits</button>
+    <button onclick="location.href='more-characters.html'">Next</button>
+  </div>
 
 </body>
 </html>
